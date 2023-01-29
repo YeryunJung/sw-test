@@ -20,6 +20,9 @@ import sys
 # 출력
 # 스위치들의 마지막 상태
 
+def change_switch(idx):
+  switch_list[idx] = 0 if switch_list[idx] == 1 else 1
+
 switch_num = int(input())
 switch_list = list(map(int, input().split()))
 student_count = int(input())
@@ -30,7 +33,7 @@ for _ in range(student_count):
       for i in range(1, switch_num + 1):
           # 스위치 인덱스가 받은 수의 배수라면
           if i % num == 0:
-            switch_list[i - 1] = 0 if switch_list[i - 1] == 1 else 1
+            change_switch(i - 1)
 # 여학생일 때
   else:
       now = num + 1
@@ -41,9 +44,9 @@ for _ in range(student_count):
           if right != left:
               break
           i += 1
-      switch_list[now] = 0 if switch_list[now] == 1 else 1
+      change_switch(now)
       while i > 1:
         i -= 1
-        switch_list[now + i] = 0 if switch_list[now + i] == 1 else 1
-        switch_list[now - i] = 0 if switch_list[now - i] == 1 else 1
+        change_switch(now + 1)
+        change_switch(now - 1)
 print(switch_list)
