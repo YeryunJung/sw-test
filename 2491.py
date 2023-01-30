@@ -13,17 +13,45 @@
 total = int(input())
 num_list = list(map(int, input().split(' ')))
 
+
+# arr = []
+# for i in range(1, total):
+#   if num_list[i - 1] < num_list[i]:
+#     arr.append('down')
+#   elif num_list[i - 1] > num_list[i]:
+#     arr.append('up')
+#   else: 
+#     arr.append('equal')
+
+# start = 0
+# last = 1
+# for i in range(1, len(arr)):
+#   if arr[i - 1] != arr[i]:
+#     i += 1
+#     start = i
+#     last = i + 1
+#   elif arr[i - 1] == arr[i]:
+#     last += 1
+#   elif 'equal' in arr[i - 1] or arr[i]:
+#     last += 1
+    
+
+
 prev = ''
 start = 0
 last = 1
 
 # 앞과 뒤 상태 체크
 def check_sequence(status):
+    global start
+    global last
     if prev == '':
         return
     # 앞과 뒤 상태 다를 경우
-    elif prev != status:
+    elif prev != 'equal' and prev != status:
         start = i
+        last = i + 1
+    elif prev == 'equal' and prev != status:
         last = i + 1
     # 앞과 뒤 상태 같을 경우
     else:
@@ -39,6 +67,7 @@ for i in range(total):
         prev = 'down'
         i += 1
     elif num_list[i + 1] == num_list[i]:
+        prev += 'equal'
         i += 1
         last += 1
         
