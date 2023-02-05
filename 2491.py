@@ -12,16 +12,15 @@
 
 total = int(input())
 num_list = list(map(int, input().split(' ')))
-# 4 1 3 3 2 2 9 2 3
 
-prev = ''
-start = 0
-last = 1
+# prev = ''
+# start = 0
+# last = 1
 
-arr = []
-for i in range(1, total):
-  if num_list[i - 1] < num_list[i]:
-    arr.append(num_list[i - 1] - num_list[i])
+# arr = []
+# for i in range(1, total):
+#   if num_list[i - 1] < num_list[i]:
+#     arr.append(num_list[i - 1] - num_list[i])
 
 
 # for i in range(1, total):
