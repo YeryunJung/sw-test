@@ -1,24 +1,53 @@
 
-# data = []
-n = 4
-for _ in range(n):
+# line = 4
+# for _ in range(line):
+#   x1, y1, p1, q1, x2, y2, p2, q2 = map(int, input().split())
+#   # 겹치는 부분이 없을 때
+#   if max(x1, x2) < min(p1, p2) and max(y1, y2) < min(q1, q2):
+#     print('a')
+#   elif x1 == p2:
+#     # 점이 겹칠 때 
+#     if y1 == q2:
+#       print('c')
+#     # 선분이 겹칠 때
+#     else:
+#       print('b')
+#   elif p1 == x2:
+#     # 점이 겹칠 때
+#     if y1 == q2:
+#       print('c')
+#     # 선분이 겹칠 때
+#     else:
+#       print('b')
+#   # 직사각형이 겹칠 때
+#   else:
+#     print('d')
+  
+line = 4
+for _ in range(line):
   x1, y1, p1, q1, x2, y2, p2, q2 = map(int, input().split())
   # 겹치는 부분이 없을 때
   if max(x1, x2) < min(p1, p2) and max(y1, y2) < min(q1, q2):
     print('a')
   elif x1 == p2:
+    # 점이 겹칠 때
     if y1 == q2:
       print('c')
+    # 선분이 겹칠 때
     else:
       print('b')
   elif p1 == x2:
+    # 점이 겹칠 때
     if y1 == q2:
       print('c')
+    # 선분이 겹칠 때
     else:
       print('b')
+  # 직사각형이 겹칠 때
   else:
     print('d')
-  
+
+
   
     # data.append(list(map(int, input().split())))
 # data의 각 요소에서
