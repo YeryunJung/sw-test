@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 38304 KB, 시간: 1104 ms
+메모리: 121660 KB, 시간: 488 ms
 
 ### 분류
 
@@ -20,7 +20,7 @@
 
 <p>여기에 그림-2에서 보인 것처럼 4번 색종이가 하나 더 놓이면 3번 색종이는 완전히 가려서 보이지 않게 된다. 그리고, 1번 색종이와 2번 색종이는 부분적으로 가려 보이며, 4번 색종이는 완전히 보이게 된다.</p>
 
-<p style="text-align: center;"><img alt="" src="" style="width: 246px; height: 173px;"></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/407be9a9-4f31-4fc1-be51-97231052dd72/-/preview/" style="width: 246px; height: 173px;"></p>
 
 <p style="text-align: center;">그림-2</p>
 

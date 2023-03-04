@@ -1,16 +1,14 @@
-grid = [[-1] * 1001 for _ in range(1001)]
+grid = [[0] * 1001 for _ in range(1001)]
 N = int(input())
-for i in range(N):
+for i in range(1, N + 1):
     x, y, w, h = map(int, input().split())
     for j in range(x, x + w):
         for k in range(y, y + h):
             grid[j][k] = i
+            
+cnts = [0] * (N + 1)
+for lst in grid:
+    for el in lst:
+        cnts[el] += 1
 
-for i in range(N):
-    cnt = 0
-    for j in range(1001):
-        for k in range(1001):
-            if grid[j][k] == i:
-                cnt+=1
-
-    print(cnt)
+print(*cnts[1:], sep='\n')
