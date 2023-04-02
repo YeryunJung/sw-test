@@ -1,27 +1,18 @@
-def dfs(n, sm): # n이 깊이(월), sm이 비용
-    global ans
-
-    # 가지치기 : 현재의 정답보다 sm이 더 커졌으면 종료
-    if ans <= sm:
-        return
-
-    # 12월 넘어가면 종료
-    if n > 12:
-        ans = min(ans, sm)
-        return
-
-    # 하부 함수 호출 4개
-    dfs(n + 1, sm + price[0] * lst[n])  # 일간권
-    dfs(n + 1, sm + price[1])  # 월간권
-    dfs(n + 3, sm + price[2])  # 분기권
-    dfs(n + 12, sm + price[3])  # 연간권
-
-
 T = int(input())
 for tc in range(1, T + 1):
     price = list(map(int, input().split()))
     lst = [0] + list(map(int, input().split()))
-    ans = 3000 * 365
 
-    dfs(1, 0)
+    s = [0] * 13
+    for i in range(1, 13):
+        # 가능한 방법 중 i달 까지의 최소비용 갱신
+        s[i] = s[i - 1] + price[0] * lst[i]  # 일간권
+        s[i] = min(s[i], s[i - 1] + price[1])  # 월간권
+        if i >= 3:
+            s[i] = min(s[i], s[i - 3] + price[2])  # 분기권
+        if i >= 12:
+            s[i] = min(s[i], s[i - 12] + price[3])  # 연간권
+
+    ans = s[12]
+
     print(f'#{tc} {ans}')
